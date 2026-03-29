@@ -1,0 +1,8 @@
+.not-found { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+.not-found__content { max-width: 480px; padding: var(--space-8); animation: fade-in-up 0.6s ease; }
+.not-found__icon-wrapper { position: relative; display: inline-flex; margin-bottom: var(--space-6); }
+.not-found__icon { color: var(--primary); animation: float 3s ease-in-out infinite; }
+.not-found__ping { position: absolute; inset: -12px; border-radius: 50%; border: 2px solid var(--primary); animation: radar-ping 2s ease-out infinite; }
+.not-found__code { font-family: var(--font-data); font-size: 6rem; font-weight: 800; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; margin-bottom: var(--space-4); }
+.not-found h2 { margin-bottom: var(--space-4); }
+.not-found p { margin-bottom: var(--space-8); }

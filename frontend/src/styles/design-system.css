@@ -1,0 +1,245 @@
+/* ============================================================
+   GreenAlert Design System — "The Neon Sentinel"
+   ============================================================ */
+
+:root {
+  /* ── Surface Hierarchy ── */
+  --surface-lowest: #090E1C;
+  --surface-low: #0E1322;
+  --surface: #0E1322;
+  --surface-container-low: #161B2B;
+  --surface-container: #1A1F2F;
+  --surface-container-high: #25293A;
+  --surface-container-highest: #2F3445;
+  --surface-bright: #343949;
+  --surface-dim: #0E1322;
+
+  /* ── Primary ── */
+  --primary: #6EFFC0;
+  --primary-container: #00E5A0;
+  --primary-fixed: #47FFB8;
+  --primary-fixed-dim: #00E29E;
+  --on-primary: #003824;
+  --on-primary-container: #006141;
+
+  /* ── Secondary ── */
+  --secondary: #ADC6FF;
+  --secondary-container: #0566D9;
+  --secondary-fixed: #D8E2FF;
+  --on-secondary: #002E6A;
+  --on-secondary-container: #E6ECFF;
+
+  /* ── Tertiary ── */
+  --tertiary: #FFE1C1;
+  --tertiary-container: #FFBD6A;
+  --tertiary-fixed: #FFDDB8;
+  --on-tertiary: #472A00;
+  --on-tertiary-container: #784B00;
+
+  /* ── Error ── */
+  --error: #FFB4AB;
+  --error-container: #93000A;
+  --on-error: #690005;
+  --on-error-container: #FFDAD6;
+
+  /* ── Neutral ── */
+  --on-surface: #DEE1F7;
+  --on-surface-variant: #BACBBF;
+  --on-background: #DEE1F7;
+  --outline: #84958A;
+  --outline-variant: #3B4A41;
+  --inverse-surface: #DEE1F7;
+  --inverse-on-surface: #2B3040;
+  --inverse-primary: #006C49;
+  --surface-tint: #00E29E;
+
+  /* ── Typography ── */
+  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-headline: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-data: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ── Font Sizes ── */
+  --text-display-lg: 3.5rem;
+  --text-display-md: 2.8rem;
+  --text-display-sm: 2.2rem;
+  --text-headline-lg: 2rem;
+  --text-headline-md: 1.75rem;
+  --text-headline-sm: 1.5rem;
+  --text-title-lg: 1.375rem;
+  --text-title-md: 1.125rem;
+  --text-title-sm: 1rem;
+  --text-body-lg: 1rem;
+  --text-body-md: 0.875rem;
+  --text-body-sm: 0.8125rem;
+  --text-label-lg: 0.875rem;
+  --text-label-md: 0.75rem;
+  --text-label-sm: 0.6875rem;
+
+  /* ── Spacing Scale ── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* ── Border Radius ── */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-ambient: 0 20px 40px rgba(0, 0, 0, 0.4);
+  --shadow-glow-primary: 0 0 30px rgba(0, 229, 160, 0.15);
+  --shadow-glow-sm: 0 0 15px rgba(0, 229, 160, 0.1);
+  --shadow-elevated: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  /* ── Glass ── */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-bg-heavy: rgba(255, 255, 255, 0.08);
+  --glass-blur: 20px;
+  --glass-border: rgba(255, 255, 255, 0.08);
+
+  /* ── Transitions ── */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* ── Z-Index ── */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+}
+
+/* ── Keyframes ── */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes radar-ping {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(0, 229, 160, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(0, 229, 160, 0.4); }
+}
+
+/* ── Utility Classes ── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+.glass-heavy {
+  background: var(--glass-bg-heavy);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+}
+
+.glass-border {
+  border: 1px solid var(--glass-border);
+}
+
+.ghost-border {
+  border: 1px solid rgba(59, 74, 65, 0.2);
+}
+
+.data-text {
+  font-family: var(--font-data);
+  letter-spacing: 0.02em;
+}
+
+.label-text {
+  font-family: var(--font-body);
+  font-size: var(--text-label-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--on-surface-variant);
+}
+
+.animate-fade-in {
+  animation: fade-in var(--transition-base) ease forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease forwards;
+}
+
+.animate-slide-in {
+  animation: slide-in-right 0.4s ease forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease forwards;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-container-low);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--outline-variant);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--outline);
+}
+
+/* ── Responsive Breakpoints (used with media queries in components) ── */
+/* Mobile: max-width: 640px */
+/* Tablet: max-width: 1024px */
+/* Desktop: min-width: 1025px */

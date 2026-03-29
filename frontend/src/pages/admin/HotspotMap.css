@@ -1,0 +1,37 @@
+.hotspot-map { display: flex; height: calc(100vh - 32px); animation: fade-in 0.4s ease; gap: 0; }
+.hotspot-map__sidebar { width: 360px; padding: var(--space-6); overflow-y: auto; display: flex; flex-direction: column; gap: var(--space-4); background: var(--surface-container-low); flex-shrink: 0; }
+.hotspot-map__sidebar h2 { font-size: var(--text-headline-sm); }
+.hotspot-map__sidebar p { font-size: var(--text-body-sm); color: var(--on-surface-variant); }
+
+.hotspot-controls { display: flex; gap: var(--space-2); }
+
+.hotspot-list { display: flex; flex-direction: column; gap: var(--space-2); }
+.hotspot-list__item { display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3); border-radius: var(--radius-md); background: var(--surface-container); cursor: pointer; transition: background var(--transition-fast); }
+.hotspot-list__item:hover { background: var(--surface-container-high); }
+.hotspot-list__info { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.hotspot-list__title { font-size: var(--text-body-sm); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.hotspot-map__view { flex: 1; position: relative; }
+.hotspot-map__placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-3); background: var(--surface-container); position: relative; overflow: hidden;
+  background: radial-gradient(ellipse at 30% 40%, rgba(0,229,160,0.05) 0%, transparent 50%), radial-gradient(ellipse at 70% 60%, rgba(173,198,255,0.03) 0%, transparent 50%), var(--surface-container);
+}
+
+.hotspot-map__dots { position: absolute; inset: 0; }
+.hotspot-dot { position: absolute; }
+.hotspot-dot__inner { display: block; width: 10px; height: 10px; border-radius: 50%; }
+.hotspot-dot--critical { background: var(--error); }
+.hotspot-dot--warning { background: var(--tertiary-container); }
+.hotspot-dot--low { background: var(--primary); }
+.hotspot-dot--resolved { background: var(--on-surface-variant); }
+.hotspot-dot__ping { position: absolute; inset: -6px; border-radius: 50%; border: 1.5px solid var(--primary); animation: radar-ping 3s ease-out infinite; opacity: 0.5; }
+
+.map-hud { position: absolute; bottom: var(--space-6); left: 50%; transform: translateX(-50%); display: flex; gap: var(--space-1); padding: var(--space-1); border-radius: var(--radius-full); }
+.map-hud__btn { padding: var(--space-2) var(--space-4); border-radius: var(--radius-full); font-size: var(--text-label-md); font-weight: 500; color: var(--on-surface-variant); background: none; cursor: pointer; transition: all var(--transition-fast); }
+.map-hud__btn:hover { color: var(--on-surface); }
+.map-hud__btn--active { background: rgba(0,229,160,0.1); color: var(--primary); }
+
+@media (max-width: 768px) {
+  .hotspot-map { flex-direction: column; height: auto; }
+  .hotspot-map__sidebar { width: 100%; }
+  .hotspot-map__view { height: 400px; }
+}

@@ -1,0 +1,24 @@
+.tracker { display: flex; height: calc(100vh - 32px); animation: fade-in 0.4s ease; }
+.tracker__sidebar { width: 380px; padding: var(--space-6); overflow-y: auto; background: var(--surface-container-low); flex-shrink: 0; display: flex; flex-direction: column; gap: var(--space-4); }
+.tracker__sidebar h2 { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-headline-sm); }
+.tracker__sidebar p { font-size: var(--text-body-sm); color: var(--on-surface-variant); }
+
+.tracker__list { display: flex; flex-direction: column; gap: var(--space-3); }
+.tracker__item { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3); border-radius: var(--radius-md); background: var(--surface-container); cursor: pointer; transition: background var(--transition-fast); }
+.tracker__item:hover { background: var(--surface-container-high); }
+.tracker__avatar { width: 36px; height: 36px; border-radius: var(--radius-full); background: rgba(0,229,160,0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: var(--text-body-sm); flex-shrink: 0; }
+.tracker__info { flex: 1; display: flex; flex-direction: column; gap: 1px; }
+.tracker__name { font-weight: 600; font-size: var(--text-body-md); }
+.tracker__role { font-size: var(--text-label-sm); color: var(--on-surface-variant); }
+
+.tracker__map { flex: 1; position: relative; }
+.tracker__map-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; position: relative; background: radial-gradient(ellipse at 40% 40%, rgba(0,229,160,0.04) 0%, transparent 50%), var(--surface-container); }
+
+.tracker-pin { position: absolute; display: flex; flex-direction: column; align-items: center; gap: var(--space-1); }
+.tracker-pin::before { content: ''; width: 12px; height: 12px; border-radius: 50%; animation: glow-pulse 2s ease-in-out infinite; }
+.tracker-pin--active::before { background: var(--primary); }
+.tracker-pin--en-route::before { background: var(--tertiary-container); }
+.tracker-pin--off-duty::before { background: var(--on-surface-variant); opacity: 0.5; }
+.tracker-pin__label { font-size: var(--text-label-sm); color: var(--on-surface-variant); background: var(--surface-container-highest); padding: 2px 6px; border-radius: var(--radius-sm); white-space: nowrap; }
+
+@media (max-width: 768px) { .tracker { flex-direction: column; height: auto; } .tracker__sidebar { width: 100%; } .tracker__map { height: 350px; } }

@@ -1,0 +1,108 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Sizes */
+.btn--sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-label-md);
+}
+
+.btn--md {
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--text-body-md);
+}
+
+.btn--lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--text-body-lg);
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* Variants */
+.btn--primary {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--primary-fixed);
+  box-shadow: 0 0 20px rgba(0, 229, 160, 0.4);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid rgba(59, 74, 65, 0.3);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  border-color: var(--secondary);
+  box-shadow: 0 0 10px rgba(173, 198, 255, 0.2);
+  background: rgba(173, 198, 255, 0.05);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--on-surface);
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--primary);
+}
+
+.btn--danger {
+  background: var(--error-container);
+  color: var(--on-error-container);
+}
+
+.btn--danger:hover:not(:disabled) {
+  box-shadow: 0 0 15px rgba(255, 180, 171, 0.3);
+}
+
+/* Icon */
+.btn__icon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.1em;
+}
+
+/* Spinner */
+.btn--loading .btn__label {
+  opacity: 0;
+}
+
+.btn__spinner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
